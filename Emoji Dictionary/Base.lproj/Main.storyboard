@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k5L-EO-Mh5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="2" width="375" height="665"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="k5L-EO-Mh5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3ap-aD-oGn"/>
-                            <constraint firstAttribute="trailing" secondItem="k5L-EO-Mh5" secondAttribute="trailing" id="Jt3-FT-bXT"/>
-                            <constraint firstItem="k5L-EO-Mh5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lOU-VE-sGS"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="k5L-EO-Mh5" secondAttribute="bottom" id="r0O-pi-K0E"/>
+                            <constraint firstItem="k5L-EO-Mh5" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bJ6-vl-ito"/>
+                            <constraint firstAttribute="trailing" secondItem="k5L-EO-Mh5" secondAttribute="trailing" id="cMn-dN-yBY"/>
+                            <constraint firstItem="k5L-EO-Mh5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eVe-IH-ty0"/>
+                            <constraint firstItem="k5L-EO-Mh5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="2" id="hHI-by-JOH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ueA-vo-1du"/>
@@ -44,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Definition View Controller-->
         <scene sceneID="9nU-ar-wiB">
             <objects>
-                <viewController id="rLG-e0-oEt" sceneMemberID="viewController">
+                <viewController id="rLG-e0-oEt" customClass="DefinitionViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2H8-No-NRX"/>
                         <viewControllerLayoutGuide type="bottom" id="Hgv-tg-KRh"/>
@@ -57,13 +58,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKZ-Ns-of4">
-                                <rect key="frame" x="78" y="95" width="218" height="239"/>
+                                <rect key="frame" x="78" y="139" width="218" height="239"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Lovely Glass of Scotch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttf-OB-P7b">
-                                <rect key="frame" x="92.5" y="434" width="189" height="21"/>
+                                <rect key="frame" x="92.5" y="478" width="189" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,6 +79,9 @@
                             <constraint firstItem="kKZ-Ns-of4" firstAttribute="top" secondItem="2H8-No-NRX" secondAttribute="bottom" constant="75" id="h3B-3S-4Pu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="kKZ-Ns-of4" id="Dx1-BP-CpN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bh-E4-zHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
